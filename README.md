@@ -33,7 +33,7 @@ the `urpc.binaryPath` setting.
 
 ## Commands
 
-- `urpc.initialize`: Initialize a new `schema.urpc` on the current workspace
+- `urpc.init`: Initialize a new `schema.urpc` file
 - `urpc.restart`: Restart Language Server
 
 ## Release Notes

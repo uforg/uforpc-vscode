@@ -26,7 +26,7 @@ function activate(context) {
   startLanguageServer(binaryPath);
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("urpc.initialize", async function () {
+    vscode.commands.registerCommand("urpc.init", async function () {
       const folderUri = await vscode.window.showOpenDialog({
         canSelectFiles: false,
         canSelectFolders: true,

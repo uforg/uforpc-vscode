@@ -48,8 +48,8 @@
     },
     "commands": [
       {
-        "command": "urpc.initialize",
-        "title": "UFO RPC: Initialize on the current workspace"
+        "command": "urpc.init",
+        "title": "UFO RPC: Initialize a new `schema.urpc` file"
       },
       {
         "command": "urpc.restart",
