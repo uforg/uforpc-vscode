@@ -1,0 +1,29 @@
+{
+  // Defines comments configuration
+  "comments": {
+    "lineComment": "//",
+    "blockComment": ["/*", "*/"]
+  },
+  // Defines bracket pairs that are automatically matched
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  // Defines pairs that are automatically closed when typing the opening character
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"" },
+    { "open": "\"\"\"", "close": "\"\"\"" }
+  ],
+  // Defines pairs that can be used to surround selected text
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["\"\"\"", "\"\"\""]
+  ]
+}
