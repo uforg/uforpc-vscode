@@ -10,7 +10,7 @@ const { restartLanguageServer } = require("./languageServer.js");
  * Activates the extension.
  * @param {vscode.ExtensionContext} context The extension context.
  */
-function activate(context) {
+async function activate(context) {
   console.log("UFO RPC: Activating extension.");
 
   let binaryPath = "";
@@ -23,7 +23,7 @@ function activate(context) {
     return;
   }
 
-  startLanguageServer(binaryPath);
+  await startLanguageServer(binaryPath);
 
   context.subscriptions.push(
     vscode.commands.registerCommand("urpc.init", async function () {
@@ -76,9 +76,9 @@ function activate(context) {
 /**
  * Deactivates the extension.
  */
-function deactivate() {
+async function deactivate() {
   console.log("Deactivating UFO RPC extension.");
-  stopLanguageServer();
+  await stopLanguageServer();
 }
 
 module.exports = {

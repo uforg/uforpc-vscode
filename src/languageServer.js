@@ -1,4 +1,8 @@
-const { LanguageClient, TransportKind } = require("vscode-languageclient/node");
+const vscode = require("vscode");
+const { LanguageClient } = require("vscode-languageclient/node");
+const { TransportKind } = require("vscode-languageclient/node");
+const { Executable } = require("vscode-languageclient/node");
+const { LanguageClientOptions } = require("vscode-languageclient/node");
 
 /**
  * The language server client instance.
@@ -11,16 +15,22 @@ let client;
  * @param {string} binaryPath The path to the binary
  */
 async function startLanguageServer(binaryPath) {
-  const serverCommand = `${binaryPath} lsp`;
-  console.log(`UFO RPC: Server command: ${serverCommand}`);
+  console.log(`UFO RPC: Binary path: ${binaryPath}`);
 
-  // Server Options
+  /**
+   * Server Options
+   * @type {Executable}
+   */
   const serverOptions = {
-    command: serverCommand,
+    command: binaryPath,
+    args: ["lsp"],
     transport: TransportKind.stdio,
   };
 
-  // Client Options
+  /**
+   * Client Options
+   * @type {LanguageClientOptions}
+   */
   const clientOptions = {
     documentSelector: [{ scheme: "file", language: "urpc" }],
     documentFormattingProvider: true,
@@ -34,7 +44,7 @@ async function startLanguageServer(binaryPath) {
     clientOptions,
   );
 
-  console.log(`UFO RPC: Starting Language Server: ${serverCommand}`);
+  console.log(`UFO RPC: Starting Language Server: ${binaryPath}`);
   try {
     await client.start();
     console.log("UFO RPC: Language Server started.");
