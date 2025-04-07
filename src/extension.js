@@ -1,13 +1,10 @@
-"use strict";
-
 const path = require("path");
-const process = require("process");
 const vscode = require("vscode");
-const { LanguageClient, TransportKind } = require("vscode-languageclient/node");
-const getBinaryPath = require("./getBinaryPath");
-
-// Language Client instance
-let client;
+const execProcess = require("child_process").exec;
+const getBinaryPath = require("./getBinaryPath.js");
+const { startLanguageServer } = require("./languageServer.js");
+const { stopLanguageServer } = require("./languageServer.js");
+const { restartLanguageServer } = require("./languageServer.js");
 
 /**
  * Activates the extension.
@@ -26,47 +23,54 @@ function activate(context) {
     return;
   }
 
-  // urpc.initialize should call the binary with the "init" command
-  // followed by the workspace root path and schema.urpc -> "urpc.exe init <workspace_root>/schema.urpc"
-  vscode.commands.registerCommand("urpc.initialize", function () {});
+  startLanguageServer(binaryPath);
 
-  // Should stop and restart the language server
-  // urpc.restart should call the binary with the "lsp" command -> "urpc.exe lsp"
-  vscode.commands.registerCommand("urpc.restart", function () {});
+  context.subscriptions.push(
+    vscode.commands.registerCommand("urpc.initialize", async function () {
+      const folderUri = await vscode.window.showOpenDialog({
+        canSelectFiles: false,
+        canSelectFolders: true,
+        canSelectMany: false,
+        openLabel: "Select folder to initialize schema.urpc",
+      });
 
-  const serverCommand = `${binaryPath} lsp`;
-  console.log(`UFO RPC: Server command: ${serverCommand}`);
+      if (!folderUri || folderUri.length === 0) {
+        return;
+      }
 
-  // Server Options
-  const serverOptions = {
-    command: serverCommand,
-    transport: TransportKind.stdio,
-  };
+      const schemaPath = path.join(folderUri[0].fsPath, "schema.urpc");
+      const initCommand = `${binaryPath} init ${schemaPath}`;
 
-  // Client Options
-  const clientOptions = {
-    documentSelector: [{ scheme: "file", language: "urpc" }],
-    documentFormattingProvider: true,
-  };
+      console.log(`UFO RPC: Initializing schema at ${schemaPath}`);
+      execProcess(initCommand, (error, stdout, stderr) => {
+        if (error) {
+          vscode.window.showErrorMessage(
+            `Failed to initialize schema: ${error.message}`,
+          );
+          console.error(`Error initializing schema: ${error.message}`);
+          return;
+        }
 
-  // Create and Start the Client
-  client = new LanguageClient(
-    "urpcLanguageServer",
-    "UFO RPC Language Server",
-    serverOptions,
-    clientOptions,
+        if (stderr) {
+          console.log(`UFO RPC: Init stderr: ${stderr}`);
+        }
+
+        if (stdout) {
+          console.log(`UFO RPC: Init stdout: ${stdout}`);
+        }
+
+        vscode.window.showInformationMessage(
+          `Schema initialized at ${schemaPath}`,
+        );
+      });
+    }),
   );
 
-  // Start the client.
-  console.log(`Starting UFO RPC Language Server: ${serverCommand}`);
-  client
-    .start()
-    .catch((error) => {
-      vscode.window.showErrorMessage(
-        `Failed to start UFO RPC Language Server: ${error}`,
-      );
-      console.error("Failed to start the language client:", error);
-    });
+  context.subscriptions.push(
+    vscode.commands.registerCommand("urpc.restart", function () {
+      restartLanguageServer(binaryPath);
+    }),
+  );
 }
 
 /**
@@ -74,8 +78,7 @@ function activate(context) {
  */
 function deactivate() {
   console.log("Deactivating UFO RPC extension.");
-  if (!client) return undefined;
-  return client.stop();
+  stopLanguageServer();
 }
 
 module.exports = {
