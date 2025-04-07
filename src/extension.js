@@ -14,19 +14,28 @@ let client;
  * @param {vscode.ExtensionContext} context The extension context.
  */
 function activate(context) {
-  console.log("Activating UFO RPC extension.");
+  console.log("UFO RPC: Activating extension.");
 
   let binaryPath = "";
   try {
     binaryPath = getBinaryPath();
+    console.log(`UFO RPC: Binary path found: ${binaryPath}`);
   } catch (error) {
     vscode.window.showErrorMessage(error.message);
     console.error(error.message);
     return;
   }
 
-  const serverCommand = context.asAbsolutePath(path.join("server", binaryName));
-  console.log(`LSP Server Command Path: ${serverCommand}`);
+  // urpc.initialize should call the binary with the "init" command
+  // followed by the workspace root path and schema.urpc -> "urpc.exe init <workspace_root>/schema.urpc"
+  vscode.commands.registerCommand("urpc.initialize", function () {});
+
+  // Should stop and restart the language server
+  // urpc.restart should call the binary with the "lsp" command -> "urpc.exe lsp"
+  vscode.commands.registerCommand("urpc.restart", function () {});
+
+  const serverCommand = `${binaryPath} lsp`;
+  console.log(`UFO RPC: Server command: ${serverCommand}`);
 
   // Server Options
   const serverOptions = {
