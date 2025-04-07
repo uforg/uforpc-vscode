@@ -1,0 +1,60 @@
+{
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.extension-test-runner",
+        "denoland.vscode-deno",
+        "mhutchie.git-graph",
+        "mutantdino.resourcemonitor",
+        "Compile-TomaszKasperczyk.copy-to-llm",
+        "donjayamanne.githistory"
+      ],
+      "settings": {
+        "launch": {
+          "version": "0.2.0",
+          "configurations": [
+            {
+              "name": "Run Extension",
+              "type": "extensionHost",
+              "request": "launch",
+              "args": [
+                "--extensionDevelopmentPath=/workspaces/uforpc-vscode"
+              ]
+            }
+          ]
+        },
+        "editor.formatOnSave": true,
+        "editor.foldingStrategy": "indentation",
+        "files.eol": "\n",
+        "[json]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[css]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[html]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        }
+      }
+    }
+  }
+}
