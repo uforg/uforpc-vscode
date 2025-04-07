@@ -53,11 +53,11 @@ function getBinaryPath() {
     }
   } catch {}
 
-  // If not found, throw an error
-  throw new Error(
-    "Could not find the UFO RPC binary. Please install it and make sure it's in your PATH, " +
-      "or set the binary path in the 'urpc.binaryPath' setting.",
-  );
+  let errMsg = "Could not find the urpc/urpc.exe binary. ";
+  errMsg += "Please download it and make sure it's in your PATH. ";
+  errMsg +=
+    "You can also set a custom binary path in the urpc.binaryPath setting.";
+  throw new Error(errMsg);
 }
 
 module.exports = getBinaryPath;
