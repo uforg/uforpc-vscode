@@ -1,0 +1,119 @@
+{
+  "scopeName": "source.urpc",
+  "config": { "name": "UFO RPC" },
+  "fileTypes": ["urpc"],
+  "patterns": [
+    { "include": "#docstring" },
+    { "include": "#comments" },
+    { "include": "#string" },
+    { "include": "#keywords" },
+    { "include": "#builtin-types" },
+    { "include": "#custom-types" },
+    { "include": "#annotations" },
+    { "include": "#numbers" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "docstring": {
+      "name": "string.quoted.doc.urpc",
+      "begin": "\"\"\"",
+      "end": "\"\"\""
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.urpc",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.urpc",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.double.urpc",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.urpc",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.urpc",
+          "match": "\\b(version|import|rule|type|proc|input|output|meta|extends|for|param|error)\\b"
+        },
+        {
+          "name": "constant.language.boolean.urpc",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "builtin-types": {
+      "name": "storage.type.primitive.urpc",
+      "match": "\\b(string|int|float|boolean|datetime)\\b"
+    },
+    "custom-types": {
+      "name": "entity.name.type.custom.urpc",
+      "match": "\\b(?!string\\b|int\\b|float\\b|boolean\\b|datetime\\b)([A-Z][A-Za-z0-9]*)\\b"
+    },
+    "annotations": {
+      "name": "entity.name.function.annotation.urpc",
+      "match": "@[A-Za-z_][A-Za-z0-9_]*"
+    },
+    "numbers": {
+      "name": "constant.numeric.urpc",
+      "match": "\\b\\d+(?:\\.\\d+)?\\b"
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.key-value.urpc",
+          "match": ":"
+        },
+        {
+          "name": "punctuation.terminator.urpc",
+          "match": ","
+        },
+        {
+          "name": "punctuation.section.braces.begin.urpc",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.section.braces.end.urpc",
+          "match": "\\}"
+        },
+        {
+          "name": "punctuation.section.brackets.begin.urpc",
+          "match": "\\["
+        },
+        {
+          "name": "punctuation.section.brackets.end.urpc",
+          "match": "\\]"
+        },
+        {
+          "name": "punctuation.definition.parameters.begin.urpc",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.definition.parameters.end.urpc",
+          "match": "\\)"
+        },
+        {
+          "name": "punctuation.separator.union.urpc",
+          "match": "\\|"
+        },
+        {
+          "name": "keyword.operator.optional.urpc",
+          "match": "\\?"
+        }
+      ]
+    }
+  }
+}
