@@ -1,0 +1,70 @@
+{
+  "name": "urpc",
+  "displayName": "UFO RPC",
+  "description": "UFO RPC VSCode Extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "urpc",
+        "aliases": [
+          "UFO RPC",
+          "ufo rpc",
+          "urpc",
+          "URPC",
+          "UFO-RPC",
+          "ufo-rpc"
+        ],
+        "extensions": [
+          ".urpc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "urpc",
+        "scopeName": "source.urpc",
+        "path": "./syntaxes/urpc.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "UFO RPC",
+      "properties": {
+        "urpc.binaryPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Path to the UFO RPC binary. If not set, the extension will try to find `urpc` or `urpc.exe` in your PATH."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "urpc.initialize",
+        "title": "UFO RPC: Initialize on the current workspace"
+      },
+      {
+        "command": "urpc.restart",
+        "title": "UFO RPC: Restart Language Server"
+      }
+    ]
+  },
+  "scripts": {},
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "1.98.0",
+    "@vscode/test-cli": "0.0.10",
+    "@vscode/test-electron": "2.4.1"
+  },
+  "dependencies": {
+    "vscode-languageclient": "9.0.1"
+  }
+}
