@@ -2,6 +2,9 @@
   "name": "urpc",
   "displayName": "UFO RPC",
   "description": "UFO RPC VSCode Extension",
+  "repository": {
+    "url": "https://github.com/uforg/uforpc-vscode"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
