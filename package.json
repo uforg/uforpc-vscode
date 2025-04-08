@@ -78,7 +78,8 @@
     ]
   },
   "scripts": {
-    "build": "node esbuild.js"
+    "dev": "node esbuild.js --watch",
+    "build": "node esbuild.js --production"
   },
   "devDependencies": {
     "@types/node": "20.x",
