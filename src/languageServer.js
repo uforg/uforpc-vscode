@@ -33,7 +33,6 @@ async function startLanguageServer(binaryPath) {
    */
   const clientOptions = {
     documentSelector: [{ scheme: "file", language: "urpc" }],
-    documentFormattingProvider: true,
   };
 
   // Create and Start the Client
