@@ -24,6 +24,9 @@ RUN apt update && \
     apt install -y wget curl zip unzip p7zip-full tzdata git && \
     rm -rf /var/lib/apt/lists/*
 
+# Install nodejs global utilities
+RUN npm install -g @vscode/vsce
+
 # Go to the app dir, delete the temporary dir and create backups dir
 WORKDIR /app
 RUN rm -rf /app/temp
