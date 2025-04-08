@@ -39,6 +39,11 @@
     "configuration": {
       "title": "UFO RPC",
       "properties": {
+        "urpc.enable": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Enable UFO RPC language support. If disabled, the only feature that will be available is Syntax Highlighting."
+        },
         "urpc.binaryPath": {
           "type": "string",
           "default": "",

@@ -7,10 +7,25 @@ const { stopLanguageServer } = require("./languageServer.js");
 const { restartLanguageServer } = require("./languageServer.js");
 
 /**
+ * Checks if the extension is enabled in the workspace settings.
+ * @returns {boolean} True if the extension is enabled, false otherwise.
+ */
+function isExtensionEnabled() {
+  const config = vscode.workspace.getConfiguration("urpc");
+  const enable = config.get("enable");
+  return enable !== undefined ? enable === true : true;
+}
+
+/**
  * Activates the extension.
  * @param {vscode.ExtensionContext} context The extension context.
  */
 async function activate(context) {
+  if (!isExtensionEnabled()) {
+    console.log("UFO RPC: Extension is disabled in workspace settings.");
+    return;
+  }
+
   console.log("UFO RPC: Activating extension.");
 
   let binaryPath = "";
@@ -40,6 +55,11 @@ async function activate(context) {
  * Deactivates the extension.
  */
 async function deactivate() {
+  if (!isExtensionEnabled()) {
+    console.log("UFO RPC: Extension is disabled in workspace settings.");
+    return;
+  }
+
   console.log("Deactivating UFO RPC extension.");
   await stopLanguageServer();
 }
