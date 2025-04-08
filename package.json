@@ -49,7 +49,7 @@
     "commands": [
       {
         "command": "urpc.init",
-        "title": "UFO RPC: Initialize a new `schema.urpc` file"
+        "title": "UFO RPC: Initialize a new schema.urpc file"
       },
       {
         "command": "urpc.restart",
