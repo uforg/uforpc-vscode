@@ -26,7 +26,11 @@
         "extensions": [
           ".urpc"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "dark": "./assets/icon-dark.png",
+          "light": "./assets/icon-light.png"
+        }
       }
     ],
     "grammars": [
