@@ -9,6 +9,9 @@ vsc-extension-quickstart.md
 **/eslint.config.mjs
 **/.vscode-test.*
 
+# Devcontainer
+.devcontainer/**
+
 # Unbundled files
 node_modules/
 src/
