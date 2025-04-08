@@ -5,6 +5,12 @@
   "repository": {
     "url": "https://github.com/uforg/uforpc-vscode"
   },
+  "license": "MIT",
+  "publisher": "uforg",
+  "contributors": [{
+    "name": "Eduardo Jerez",
+    "url": "https://eduardo.lat"
+  }],
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
