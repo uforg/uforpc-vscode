@@ -11,6 +11,9 @@
 This is the official UFO RPC extension for Visual Studio Code or any VSCode
 based editor.
 
+- [UFO RPC Repository](https://github.com/uforg/uforpc)
+- [UFO RPC VSCode Extension Repository](https://github.com/uforg/uforpc-vscode)
+
 ## Features
 
 The following features are provided by the extension for `.urpc` files.
