@@ -7,10 +7,12 @@
   },
   "license": "MIT",
   "publisher": "uforg",
-  "contributors": [{
-    "name": "Eduardo Jerez",
-    "url": "https://eduardo.lat"
-  }],
+  "contributors": [
+    {
+      "name": "Eduardo Jerez",
+      "url": "https://eduardo.lat"
+    }
+  ],
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
@@ -80,7 +82,8 @@
     "@types/node": "20.x",
     "@types/vscode": "1.98.0",
     "@vscode/test-cli": "0.0.10",
-    "@vscode/test-electron": "2.4.1"
+    "@vscode/test-electron": "2.4.1",
+    "esbuild": "0.25.2"
   },
   "dependencies": {
     "vscode-languageclient": "9.0.1"
