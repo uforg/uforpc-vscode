@@ -19,7 +19,9 @@
     "vscode": "^1.96.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Linters",
+    "Formatters"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
