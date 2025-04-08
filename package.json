@@ -21,7 +21,7 @@
     "Programming Languages"
   ],
   "activationEvents": [],
-  "main": "./src/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "languages": [
       {
