@@ -1,5 +1,13 @@
 # UFO RPC VSCode Extension
 
+<img
+  width="250px"
+  alt="UFO RPC Logo"
+  src="https://raw.githubusercontent.com/uforg/uforpc/refs/heads/main/assets/logo-300px.png"
+/>
+
+<br/>
+
 This is the official UFO RPC extension for Visual Studio Code or any VSCode
 based editor.
 
@@ -28,8 +36,11 @@ the `urpc.binaryPath` setting.
 
 ## Extension Settings
 
+- `urpc.enable`: Enable UFO RPC language support. If disabled, the only feature
+  that will be available is Syntax Highlighting. Default `true`.
+
 - `urpc.binaryPath`: Path to the UFO RPC binary. If not set, the extension will
-  try to find `urpc` or `urpc.exe` in your PATH.
+  try to find `urpc` or `urpc.exe` in your PATH. Default `<not set>`.
 
 ## Commands
 
