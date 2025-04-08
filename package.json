@@ -2,6 +2,7 @@
   "name": "urpc",
   "displayName": "UFO RPC",
   "description": "UFO RPC VSCode Extension",
+  "icon": "./assets/icon.png",
   "repository": {
     "url": "https://github.com/uforg/uforpc-vscode"
   },
