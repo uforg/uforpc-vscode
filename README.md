@@ -52,6 +52,10 @@ the `urpc.binaryPath` setting.
 
 ## Release Notes
 
+### 0.1.1
+
+Downgrade minimum VSCode version to 1.96.0.
+
 ### 0.1.0
 
 Initial release of UFO RPC for VSCode.
