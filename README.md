@@ -1,15 +1,6 @@
 # UFO RPC VSCode Extension
 
-<img
-  width="250px"
-  alt="UFO RPC Logo"
-  src="https://raw.githubusercontent.com/uforg/uforpc/refs/heads/main/assets/logo-300px.png"
-/>
-
-<br/>
-
-This is the official UFO RPC extension for Visual Studio Code or any VSCode
-based editor.
+Official UFO RPC extension for Visual Studio Code or any VSCode based editor.
 
 - [UFO RPC Repository](https://github.com/uforg/uforpc)
 - [UFO RPC VSCode Extension Repository](https://github.com/uforg/uforpc-vscode)
