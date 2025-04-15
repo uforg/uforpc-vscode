@@ -16,7 +16,8 @@
     { "open": "[", "close": "]" },
     { "open": "(", "close": ")" },
     { "open": "\"", "close": "\"" },
-    { "open": "\"\"\"", "close": "\"\"\"" }
+    { "open": "\"\"\"", "close": "\"\"\"" },
+    { "open": "/*", "close": "*/" }
   ],
   // Defines pairs that can be used to surround selected text
   "surroundingPairs": [
