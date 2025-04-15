@@ -43,6 +43,11 @@ the `urpc.binaryPath` setting.
 
 ## Release Notes
 
+### 0.1.2
+
+Add categories for Linters and Formatters in the marketplace and support for
+surrounding comments in language configuration.
+
 ### 0.1.1
 
 Downgrade minimum VSCode version to 1.96.0.
