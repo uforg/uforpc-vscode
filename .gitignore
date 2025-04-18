@@ -2,6 +2,10 @@ node_modules/
 dist/
 bin/
 
+# Temp
+tmp/
+temp/
+
 # Test files
 schema.urpc
 

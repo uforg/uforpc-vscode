@@ -9,6 +9,13 @@ vsc-extension-quickstart.md
 **/eslint.config.mjs
 **/.vscode-test.*
 
+# Test files
+schema.urpc
+
+# Temp
+temp/
+tmp/
+
 # Devcontainer
 .devcontainer/**
 
