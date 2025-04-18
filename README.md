@@ -13,6 +13,7 @@ The following features are provided by the extension for `.urpc` files.
 - Error highlighting
 - Code autocompletion
 - Auto formatting
+- Code snippets
 
 ## Requirements
 
@@ -41,7 +42,19 @@ the `urpc.binaryPath` setting.
 - `urpc.init`: Initialize a new `schema.urpc` file
 - `urpc.restart`: Restart Language Server
 
+## Snippets
+
+The following snippets are available for `.urpc` files:
+
+- `rule`: Creates a new rule template (`rule @$name { }`)
+- `type`: Creates a new type template (`type $name { }`)
+- `proc`: Creates a new procedure template (`proc $name { }`)
+
 ## Release Notes
+
+### 0.1.3
+
+Add code snippets for rule, proc, and type in .urpc files.
 
 ### 0.1.2
 

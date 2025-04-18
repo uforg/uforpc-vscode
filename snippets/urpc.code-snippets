@@ -1,0 +1,29 @@
+{
+  "URPC Rule": {
+    "prefix": "rule",
+    "body": [
+      "rule @$1 {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create a new URPC rule"
+  },
+  "URPC Procedure": {
+    "prefix": "proc",
+    "body": [
+      "proc $1 {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create a new URPC procedure"
+  },
+  "URPC Type": {
+    "prefix": "type",
+    "body": [
+      "type $1 {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create a new URPC type"
+  }
+}

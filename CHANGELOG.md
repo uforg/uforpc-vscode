@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.3
+
+- Add code snippets for rule, type and proc in .urpc files.
+
 ## 0.1.2
 
 - Add categories for Linters and Formatters in the marketplace.

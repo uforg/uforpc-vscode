@@ -14,7 +14,7 @@
       "url": "https://eduardo.lat"
     }
   ],
-  "version": "0.1.2",
+  "version": "0.1.3",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -77,6 +77,12 @@
       {
         "command": "urpc.restart",
         "title": "UFO RPC: Restart Language Server"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "urpc",
+        "path": "./snippets/urpc.code-snippets"
       }
     ]
   },
