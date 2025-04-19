@@ -52,6 +52,10 @@ The following snippets are available for `.urpc` files:
 
 ## Release Notes
 
+### 0.1.4
+
+Add `deprecated` keyword to URPC syntax.
+
 ### 0.1.3
 
 Add code snippets for rule, proc, and type in .urpc files.

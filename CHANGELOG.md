@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.4
+
+Add `deprecated` keyword to URPC syntax.
+
 ## 0.1.3
 
 - Add code snippets for rule, type and proc in .urpc files.
