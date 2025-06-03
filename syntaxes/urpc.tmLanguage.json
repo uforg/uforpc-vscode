@@ -1,4 +1,5 @@
 {
+  "name": "urpc",
   "scopeName": "source.urpc",
   "config": { "name": "UFO RPC" },
   "fileTypes": ["urpc"],
@@ -57,11 +58,11 @@
     },
     "builtin-types": {
       "name": "storage.type.primitive.urpc",
-      "match": "\\b(string|int|float|boolean|datetime)\\b"
+      "match": "\\b(string|int|float|bool|datetime)\\b"
     },
     "custom-types": {
       "name": "entity.name.type.custom.urpc",
-      "match": "\\b(?!string\\b|int\\b|float\\b|boolean\\b|datetime\\b)([A-Z][A-Za-z0-9]*)\\b"
+      "match": "\\b(?!string\\b|int\\b|float\\b|bool\\b|datetime\\b)([A-Z][A-Za-z0-9]*)\\b"
     },
     "annotations": {
       "name": "entity.name.function.annotation.urpc",
