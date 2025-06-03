@@ -48,7 +48,7 @@
       "patterns": [
         {
           "name": "keyword.control.urpc",
-          "match": "\\b(version|import|deprecated|rule|type|proc|input|output|meta|extends|for|param|error)\\b"
+          "match": "\\b(version|import|deprecated|rule|type|proc|stream|input|output|meta|extends|for|param|error)\\b"
         },
         {
           "name": "constant.language.boolean.urpc",

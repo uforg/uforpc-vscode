@@ -52,6 +52,10 @@ The following snippets are available for `.urpc` files:
 
 ## Release Notes
 
+### 0.1.6
+
+Add `stream` keyword to URPC syntax.
+
 ### 0.1.5
 
 Add `bool` type to URPC syntax.

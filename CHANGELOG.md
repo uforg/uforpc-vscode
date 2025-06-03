@@ -1,12 +1,16 @@
 # Change Log
 
+## 0.1.6
+
+- Add `stream` keyword to URPC syntax.
+
 ## 0.1.5
 
 - Add `bool` type to URPC syntax.
 
 ## 0.1.4
 
-Add `deprecated` keyword to URPC syntax.
+- Add `deprecated` keyword to URPC syntax.
 
 ## 0.1.3
 
