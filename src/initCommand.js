@@ -14,23 +14,23 @@ async function initCommand(binaryPath) {
     canSelectFiles: false,
     canSelectFolders: true,
     canSelectMany: false,
-    openLabel: "Select folder to initialize schema.urpc",
+    openLabel: "Select folder to initialize UFO RPC",
   });
 
   if (!folderUri || folderUri.length === 0) {
     return;
   }
 
-  const schemaPath = path.join(folderUri[0].fsPath, "schema.urpc");
-  const initCommand = `${binaryPath} init ${schemaPath}`;
+  const folderPath = folderUri[0].fsPath;
+  const initCommand = `${binaryPath} init ${folderPath}`;
 
-  console.log(`UFO RPC: Initializing schema at ${schemaPath}`);
+  console.log(`UFO RPC: Initializing at ${folderPath}`);
   execProcess(initCommand, (error, stdout, stderr) => {
     if (error) {
       vscode.window.showErrorMessage(
-        `Failed to initialize schema: ${error.message}`,
+        `UFO RPC: Failed to initialize: ${error.message}`,
       );
-      console.error(`Error initializing schema: ${error.message}`);
+      console.error(`UFO RPC: Error initializing schema: ${error.message}`);
       return;
     }
 
@@ -42,19 +42,8 @@ async function initCommand(binaryPath) {
       console.log(`UFO RPC: Init stdout: ${stdout}`);
     }
 
-    if (!fs.existsSync(schemaPath)) {
-      vscode.window.showErrorMessage(
-        `Failed to create schema file at ${schemaPath}, check your permissions.`,
-      );
-      return;
-    }
-
-    vscode.workspace.openTextDocument(schemaPath).then((doc) => {
-      vscode.window.showTextDocument(doc);
-    });
-
     vscode.window.showInformationMessage(
-      `Schema initialized at ${schemaPath}`,
+      `UFO RPC: Initialized at ${folderPath}`,
     );
   });
 }

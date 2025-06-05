@@ -52,6 +52,11 @@ The following snippets are available for `.urpc` files:
 
 ## Release Notes
 
+### 0.1.7
+
+Refactor `urpc.init` command to initialize a new UFO RPC project instead of a
+single `schema.urpc` file.
+
 ### 0.1.6
 
 Add `stream` keyword to URPC syntax.
