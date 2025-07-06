@@ -52,6 +52,10 @@ The following snippets are available for `.urpc` files:
 
 ## Release Notes
 
+### 0.1.8
+
+Update extension icon.
+
 ### 0.1.7
 
 Refactor `urpc.init` command to initialize a new UFO RPC project instead of a
