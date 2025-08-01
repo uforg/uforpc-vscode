@@ -89,8 +89,7 @@
   "scripts": {
     "dev": "node esbuild.js --watch",
     "build": "node esbuild.js --production",
-    "package": "rm -rf *.vsix && rm -rf ./dist/ && npm run build && vsce package",
-    "publish": "npm run package && vsce publish"
+    "package": "rm -rf *.vsix && rm -rf ./dist/ && npm run build && vsce package"
   },
   "devDependencies": {
     "@types/node": "20.x",
