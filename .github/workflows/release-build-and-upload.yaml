@@ -1,0 +1,30 @@
+name: Release Build and Upload
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-upload:
+    name: Build and Upload to Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH directory
+        run: mkdir -p /home/runner/.ssh
+
+      - name: Run tests, lint and build
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: /bin/bash -c "npm install && npm run package"
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ./urpc-*.vsix
