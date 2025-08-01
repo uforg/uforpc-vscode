@@ -5,6 +5,12 @@ Official UFO RPC extension for Visual Studio Code or any VSCode based editor.
 - [UFO RPC Repository](https://github.com/uforg/uforpc)
 - [UFO RPC VSCode Extension Repository](https://github.com/uforg/uforpc-vscode)
 
+## Installation
+
+- [Install from the VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=uforg.urpc)
+- [Install from Open VSX Registry](https://open-vsx.org/extension/uforg/urpc)
+- [Download the `.vsix` file from the releases page](https://github.com/uforg/uforpc-vscode/releases)
+
 ## Features
 
 The following features are provided by the extension for `.urpc` files.
